@@ -79,5 +79,25 @@ public class Cviceni2 {
             }
             System.out.println();
         }
+        
+        //Zkracena inicializace dvojrozmerneho pole
+        int pole2[][] = {
+            {7,4,9,0},
+            {6,9,0},
+            {8,0},            
+            {2}
+        };
+        
+        for(int kolo = 0; kolo < pole2.length; kolo++){
+            System.out.println("Kolo cislo: " + (kolo+1));            
+            for(int index = 0; index < pole2[kolo].length; index++){
+                System.out.print(pole2[kolo][index] + ", ");
+            }
+            System.out.println();
+        }
+        
+        
+        
+        
     }
 }
