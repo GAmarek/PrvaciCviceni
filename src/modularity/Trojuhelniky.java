@@ -4,9 +4,11 @@ public class Trojuhelniky {
     
     public static void main(String[] args) {
         
+        
         int pocetTrojuhelniku = 5;
         for(int vyskaTrojuhelniku = 1; vyskaTrojuhelniku <= pocetTrojuhelniku; vyskaTrojuhelniku++){
             vypisTrojuhelniku(vyskaTrojuhelniku, (char)((int)'0' + vyskaTrojuhelniku));
+            vypisReverseTrojuhelniku(vyskaTrojuhelniku, (char)((int)'0' + vyskaTrojuhelniku));
         }
     }
     
@@ -32,5 +34,12 @@ public class Trojuhelniky {
             vypisRadekZnaku(radek, znak);
         }
     }
+    
+    public static void vypisReverseTrojuhelniku(int vyska, char znak){
+        for(int radek=vyska; radek >= 1; radek--){
+            vypisRadekZnaku(radek, znak);
+        }
+    }
+    
         
 }
