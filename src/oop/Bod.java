@@ -1,17 +1,29 @@
 package oop;
 
-class Bod {
-    int x;
-    int y;
+public class Bod {
+    private int x;
+    private int y;
 
+    
+    public Bod(int x, int y){
+        if(x < 0){
+            x = 0;
+        }        
+        if(y < 0){
+            y = 0;
+        }
+        
+        this.x = x;
+        this.y = y;
+    }
+    
+    
     /**
      * Vrati svou vzdalenost od pocatku
      * @return 
      */
-    double vzdalenostOdPocatku() {
-        Bod pocatek = new Bod();
-        pocatek.x = 0;
-        pocatek.y = 0;
+    public double vzdalenostOdPocatku() {
+        Bod pocatek = new Bod(0, 0);
         
         return vzdalenostOdBodu(pocatek);
     }
@@ -21,7 +33,7 @@ class Bod {
      * @param bod
      * @return 
      */
-    double vzdalenostOdBodu(Bod bod) {
+    public double vzdalenostOdBodu(Bod bod) {
         double vzdalenost = Math.sqrt(Math.pow(x - bod.x, 2) + Math.pow(y - bod.y, 2));
         return vzdalenost;
     }
@@ -29,35 +41,35 @@ class Bod {
     /**
      * Vypise svou reprezentaci.
      */
-    void vypis(){
+    public void vypis(){
         System.out.println("x = " + x);
         System.out.println("y = " + y);
-        System.out.println();
     }
 
     /**
      * Zvetsi x-ovou souradnici bodu o 1.
      * @param bod 
      */
-    static void posunBodX1(Bod bod){
-        bod.x++;
+    public static void posunBodX1(Bod bod, int delka){
+        if(bod.x + delka < 0){
+            bod.x = 0;
+            return;
+        }
+        
+        bod.x = bod.x+delka;
     }
     
+    
     public static void main(String[] args) {
-        Bod bod1 = new Bod();
-        bod1.x = 1;
-        bod1.y = 1;
-
-        Bod bod2 = new Bod();
-        bod2.x = 2;
-        bod2.y = 2;
-
+        Bod bod1 = new Bod(1, 1);
+        Bod bod2 = new Bod(2, 2);
+        
         double vzdalenost = bod1.vzdalenostOdBodu(bod2);
         System.out.println("Vzdalenost bodu1 od bodu2 je: " + vzdalenost);
         System.out.println("Vzdalenost bodu1 od pocatku je: " + bod1.vzdalenostOdPocatku());
         
         bod1.vypis();        
-        Bod.posunBodX1(bod1);
+        Bod.posunBodX1(bod1, 1);
         bod1.vypis();        
     }
 }
