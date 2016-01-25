@@ -47,8 +47,9 @@ public class Bod {
     }
 
     /**
-     * Zvetsi x-ovou souradnici bodu o 1.
+     * Zvetsi x-ovou souradnici bodu o {@code delka}.
      * @param bod 
+     * @param delka
      */
     public static void posunBodX1(Bod bod, int delka){
         if(bod.x + delka < 0){
