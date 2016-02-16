@@ -1,7 +1,6 @@
 package oop.apisamples;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ExerciseScanner {
@@ -12,8 +11,8 @@ public class ExerciseScanner {
         }
     }
 
-public static void seradList(ArrayList list) {
-        list.sort(null);
+    public static void seradList(ArrayList list) {
+        list.sort();
     }
 
     public static void vypisList(ArrayList list) {
@@ -32,14 +31,15 @@ public static void seradList(ArrayList list) {
     }
 
     public static void main(String[] args) throws Exception {
-        Scanner scanner;
+        Scanner scanner;        
         
-        if(args.length == 0){
-            System.out.println("Pouzijte argument pro typ vstupu. Podporovane hodnoty: console|soubor|retezec");            
+        
+        if (args.length == 0) {
+            System.out.println("Pouzijte argument pro typ vstupu. Podporovane hodnoty: console|soubor|retezec");
             return;
         }
-        
-        switch(args[0]){
+
+        switch (args[0]) {
             case "console":
                 scanner = new Scanner(System.in);
                 zpracujVstup(scanner);
@@ -56,6 +56,7 @@ public static void seradList(ArrayList list) {
                 break;
             default:
                 System.out.println("Tento typ vstupu neni podporovan");
-        }        
+        }
+        
     }
 }
