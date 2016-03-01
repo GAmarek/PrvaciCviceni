@@ -1,10 +1,12 @@
 package oop;
 
 public class Bod {
+    
+    private static int pocetInstanci;
+    
     private int x;
     private int y;
 
-    
     public Bod(int x, int y){
         if(x < 0){
             x = 0;
@@ -15,6 +17,8 @@ public class Bod {
         
         this.x = x;
         this.y = y;
+        
+        pocetInstanci++;        
     }
     
     
@@ -59,11 +63,26 @@ public class Bod {
         
         bod.x = bod.x+delka;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public static int getPocetInstanci() {
+        return pocetInstanci;
+    }
+    
     
     
     public static void main(String[] args) {
         Bod bod1 = new Bod(1, 1);
         Bod bod2 = new Bod(2, 2);
+        
+        System.out.println("pocet instanci bodu je: " + pocetInstanci);
         
         double vzdalenost = bod1.vzdalenostOdBodu(bod2);
         System.out.println("Vzdalenost bodu1 od bodu2 je: " + vzdalenost);
@@ -73,4 +92,6 @@ public class Bod {
         Bod.posunBodX1(bod1, 1);
         bod1.vypis();        
     }
+    
+    
 }
