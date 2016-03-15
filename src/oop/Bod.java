@@ -2,7 +2,7 @@ package oop;
 
 public class Bod {
     
-    private static int pocetInstanci;
+    private static int pocetInstanci = 0;
     
     private int x;
     private int y;
