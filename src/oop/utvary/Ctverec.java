@@ -20,6 +20,7 @@ class Ctverec extends RovinnyUtvar{
         return 4 * delka;
     }
 
+    @Override
     public double obsah() {
         return delka * delka;
     }
