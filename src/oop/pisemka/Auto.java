@@ -19,9 +19,9 @@ public class Auto extends Vozidlo{
     }
 
     @Override    
-    public void info() {
+    public void vypis() {
         System.out.println("Auto: ");
-        super.info();
+        super.vypis();
         System.out.println("benzinak = " + benzinak);
     }
 }

@@ -2,7 +2,7 @@ package oop.utvary;
 
 import oop.Bod;
 
-public abstract class RovinnyUtvar {
+public abstract class RovinnyUtvar implements Rohovatost{
     
     public abstract double obsah();
     

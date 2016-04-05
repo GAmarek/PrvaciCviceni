@@ -33,6 +33,10 @@ public class ExerciseScanner {
     public static void main(String[] args) throws Exception {
         Scanner scanner;        
         
+        int[] pole = {2, 8, 1, 8};
+        ArrayList list = new ArrayList(pole);
+        pole[0] = -1;
+        
         
         if (args.length == 0) {
             System.out.println("Pouzijte argument pro typ vstupu. Podporovane hodnoty: console|soubor|retezec");

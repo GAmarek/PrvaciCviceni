@@ -6,4 +6,11 @@ public class Valec extends Teleso{
         this.rovinnyUtvar = kruh;
         this.vyska = vyska;
     }
+
+    @Override
+    public int pocetRohu() {
+        return 0;
+    }
+    
+    
 }

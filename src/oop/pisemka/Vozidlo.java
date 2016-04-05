@@ -1,7 +1,9 @@
 package oop.pisemka;
 
+import java.security.InvalidParameterException;
 
-public abstract class Vozidlo {
+
+public abstract class Vozidlo implements Comparable<Vozidlo>{
 
     private static int najetoCelkem = 0;
 
@@ -15,7 +17,7 @@ public abstract class Vozidlo {
         najeto = 0;
     }
 
-    public void info(){
+    public void vypis(){
         System.out.println("spz = " + getSpz() + 
                 ", obsah motoru = " + obsahMotoru +
                 ", najeto " + najeto +
@@ -41,5 +43,9 @@ public abstract class Vozidlo {
     public static int getNajetoCelkem(){
         return najetoCelkem;
     }
-    
+
+    @Override
+    public int compareTo(Vozidlo o) {
+        return this.getSpz().compareTo(o.getSpz());
+    }
 }

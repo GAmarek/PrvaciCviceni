@@ -13,5 +13,11 @@ public class Kvadr extends Teleso{
         Kvadr kvadr = new Kvadr(new Ctverec(new Bod(1,1), 2), 4);
         System.out.println("Objem = " + kvadr.objem());
     }
+
+    @Override
+    public int pocetRohu() {
+        return 8;
+    }
+    
     
 }

@@ -10,7 +10,6 @@ public class ArrayList {
     }
     
     public ArrayList(int[] pole){
-        this.pole = new int[pole.length];
         copyArray(pole, this.pole);
     }
     
@@ -26,6 +25,7 @@ public class ArrayList {
         int[] newPole = new int[pole.length + 1];
         copyArray(pole, newPole);
         newPole[newPole.length - 1] = prvek;
+        
         pole = newPole;
     }    
     
@@ -34,7 +34,7 @@ public class ArrayList {
     }
     
     public int size(){
-        return pole.length;        
+        return pole.length;
     }
     
     private static void copyArray(int[] poleFrom, int[] poleTo){
@@ -42,6 +42,6 @@ public class ArrayList {
             poleTo[i] = poleFrom[i];
         }
     }
-    
+        
     
 }

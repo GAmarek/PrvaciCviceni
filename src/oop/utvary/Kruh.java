@@ -24,6 +24,12 @@ public class Kruh extends RovinnyUtvar{
     public int getPolomer() {
         return polomer;
     }
+
+    @Override
+    public int pocetRohu() {
+        return 0;
+    }
+    
     
     
 }

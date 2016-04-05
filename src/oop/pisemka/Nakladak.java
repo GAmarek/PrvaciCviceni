@@ -1,6 +1,9 @@
 package oop.pisemka;
 
-public class Nakladak extends Vozidlo{
+import oop.Infoservice;
+
+
+public class Nakladak extends Vozidlo implements Infoservice{
     private int objemNavesu;
 
     public Nakladak(int objemNavesu, double obsahMotoru, String spz) {
@@ -14,13 +17,20 @@ public class Nakladak extends Vozidlo{
     }
 
     @Override
-    public void info() {
+    public void vypis() {
         System.out.println("Nakladak: ");
-        super.info();
+        super.vypis();
         System.out.println("objemNavesu = " + objemNavesu);
     }
 
     public int getObjemNavesu() {
         return objemNavesu;
     }
+
+    @Override
+    public void info() {
+        vypis();
+    }
+    
+    
 }

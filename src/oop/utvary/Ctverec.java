@@ -1,8 +1,9 @@
 package oop.utvary;
 
 import oop.Bod;
+import oop.Infoservice;
 
-class Ctverec extends RovinnyUtvar{
+public class Ctverec extends RovinnyUtvar implements Infoservice{
 
     private Bod pocatek;
     private int delka;
@@ -45,6 +46,8 @@ class Ctverec extends RovinnyUtvar{
 
     }
 
+
+    
     public void vypis() {
         System.out.println("Vypis ctverce:");
         System.out.println("Pocatek ctverce je v bode:");
@@ -68,4 +71,13 @@ class Ctverec extends RovinnyUtvar{
 
     }
 
+    @Override
+    public void info() {
+        vypis();
+    }
+
+    @Override
+    public int pocetRohu() {
+        return 4;
+    }
 }
