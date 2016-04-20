@@ -1,6 +1,7 @@
 package oop.pisemka;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Test {
 
@@ -28,11 +29,18 @@ public class Test {
         try {
             vozidla[0].cesta(-1);
             vozidla[1].cesta(10);
-        } catch(CestaException e){
+        } catch (CestaException e) {
             throw new RuntimeException(e);
-        }        
+        } finally {
+            System.out.println("Finally Block");
+        }
 
-        Arrays.sort(vozidla);
+        Arrays.sort(vozidla, new Comparator<Vozidlo>() {
+            @Override
+            public int compare(Vozidlo o1, Vozidlo o2) {
+                return new Double(o1.spotreba()).compareTo(o2.spotreba());
+            }
+        });
 
         for (Vozidlo vozidlo : vozidla) {
             vozidlo.vypis();
@@ -42,4 +50,5 @@ public class Test {
         System.out.println("Celkem najeto: " + Vozidlo.getNajetoCelkem());
     }
 
+    
 }
